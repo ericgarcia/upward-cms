@@ -52,7 +52,8 @@ keystone.set('nav', {
 	'users': 'User',
   'articles': 'Article',
   'content types': 'ContentType',
-  'subjects': 'Subject'
+  'subjects': 'Subject',
+  'licenses': 'License'
 });
 
 // Start Keystone to connect to your database and initialise the web server

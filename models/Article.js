@@ -15,6 +15,7 @@ Article.add({
     // source: { type: Types.Relationship, ref: 'Source' },
     subjects: { type: Types.Relationship, ref: 'Subject', many: true },
     contentTypes: { type: Types.Relationship, ref: 'ContentType', many: true },
+    license: { type: Types.Relationship, ref: 'License' },
     publicationYear: Number,
     // createdAt: { type: Date, default: Date.now },
     // image: { type: Types.CloudinaryImage },
