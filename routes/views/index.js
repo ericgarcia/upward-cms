@@ -23,6 +23,8 @@ exports = module.exports = function(req, res) {
 			.limit(3)
 			.where('state', 'published')
 			// .populate('owner')
+      .populate('subjects')
+      .populate('contentTypes')
 			.exec(function(err, results) {
 				locals.data.articles = results;
 				next(err);
