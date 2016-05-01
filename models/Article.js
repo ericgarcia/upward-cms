@@ -8,14 +8,14 @@ var Article = new keystone.List('Article', {
 });
 
 Article.add({
-    title: { type: String, required: true },
+    title: { type: String, required: true, initial: true },
     state: { type: Types.Select, options: 'published, archived', default: 'published' },
     owner: { type: Types.Relationship, ref: 'User' },
-    author: { type: String, required: true },
+    author: { type: String },
     // source: { type: Types.Relationship, ref: 'Source' },
-    // categories: { type: Types.Relationship, ref: 'Category', many: true },
-    contentType: { type: Types.Relationship, ref: 'ContentType'},
-    publicationDate: Date,
+    subjects: { type: Types.Relationship, ref: 'Subject', many: true },
+    contentTypes: { type: Types.Relationship, ref: 'ContentType', many: true },
+    publicationYear: Number,
     // createdAt: { type: Date, default: Date.now },
     // image: { type: Types.CloudinaryImage },
     content: {
@@ -30,5 +30,5 @@ Article.add({
     }
 });
 
-Article.defaultColumns = 'title, state|20%, contentType, content%'
+Article.defaultColumns = 'title, state|15%, subjects, contentTypes, content'
 Article.register();

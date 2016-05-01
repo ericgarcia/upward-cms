@@ -51,7 +51,8 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	'users': 'User',
   'articles': 'Article',
-  'content types': 'ContentType'
+  'content types': 'ContentType',
+  'subjects': 'Subject'
 });
 
 // Start Keystone to connect to your database and initialise the web server
