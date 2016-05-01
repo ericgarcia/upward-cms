@@ -5834,3 +5834,6 @@ button.close {
   display: block;
   max-width: 100%;
   height: auto; }
+
+.article.row {
+  margin-top: 30px; }
