@@ -13,13 +13,13 @@ keystone.init({
 
 	'name': 'Upward Spirals',
 	'brand': 'Upward Spirals',
-	
+
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -49,7 +49,9 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 
 keystone.set('nav', {
-	'users': 'users'
+	'users': 'User',
+  'articles': 'Article',
+  'content types': 'ContentType'
 });
 
 // Start Keystone to connect to your database and initialise the web server

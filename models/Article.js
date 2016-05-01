@@ -11,21 +11,24 @@ Article.add({
     title: { type: String, required: true },
     state: { type: Types.Select, options: 'published, archived', default: 'published' },
     owner: { type: Types.Relationship, ref: 'User' },
-    // author: { type: Types.Relationship, ref: 'Author' },
+    author: { type: String, required: true },
     // source: { type: Types.Relationship, ref: 'Source' },
     // categories: { type: Types.Relationship, ref: 'Category', many: true },
-    // contentType: { type: Types.Relationship, ref: 'ContentType'},
-    // publicationDate: Date,
-    createdAt: { type: Date, default: Date.now },
+    contentType: { type: Types.Relationship, ref: 'ContentType'},
+    publicationDate: Date,
+    // createdAt: { type: Date, default: Date.now },
     // image: { type: Types.CloudinaryImage },
     content: {
     	type: Types.S3File,
     	filename: function(item, filename){
     		// prefix file name with object id
     		return item._id + '-' + filename;
+    	},
+      format: function(item, file){
+    		return '<a href="http:'+file.url+'"> '+file.originalname +' </a>'
     	}
     }
 });
 
-Article.defaultColumns = 'title, state|20%, owner, createdAt|15%'
+Article.defaultColumns = 'title, state|20%, contentType, content%'
 Article.register();
