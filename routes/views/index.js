@@ -20,9 +20,8 @@ exports = module.exports = function(req, res) {
     var Resource = keystone.list('Resource');
 
     Resource.model.find()
-      .limit(3)
+      // .limit(3)
       .where('state', 'published')
-      // .populate('owner')
       .populate('subjects')
       .populate('resourceTypes')
       .exec(function(err, results) {
