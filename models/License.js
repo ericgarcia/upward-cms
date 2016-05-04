@@ -2,17 +2,17 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * ResourceType Model
+ * License Model
  * ==========
  */
 
- var ResourceType = new keystone.List('ResourceType', {
+ var License = new keystone.List('License', {
      autokey: { path: 'slug', from: 'title', unique: true },
      map: { name: 'title' },
      defaultSort: '-createdAt'
  });
 
-ResourceType.add({
+License.add({
   title: { type: String, initial: true, required: true, index: true },
   description: { type: Types.Textarea },
   createdAt: { type: Date, default: Date.now }
@@ -22,5 +22,5 @@ ResourceType.add({
  * Registration
  */
 
-ResourceType.defaultColumns = 'title|20%, description';
-ResourceType.register();
+License.defaultColumns = 'title|30%, description';
+License.register();

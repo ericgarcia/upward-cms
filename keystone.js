@@ -11,19 +11,17 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'Upward Spirals',
-	'brand': 'Upward Spirals',
-
-	'sass': 'public',
-	'static': 'public',
-	'favicon': 'public/favicon.ico',
-	'views': 'templates/views',
-	'view engine': 'jade',
-
-	'auto update': true,
-	'session': true,
-	'auth': true,
-	'user model': 'User'
+  'name': 'Upward Spirals',
+  'brand': 'Upward Spirals',
+  'sass': 'public',
+  'static': 'public',
+  'favicon': 'public/favicon.ico',
+  'views': 'templates/views',
+  'view engine': 'jade',
+  'auto update': true,
+  'session': true,
+  'auth': true,
+  'user model': 'User'
 
 });
 
@@ -36,10 +34,10 @@ keystone.import('models');
 // for each request) should be added to ./routes/middleware.js
 
 keystone.set('locals', {
-	_: require('underscore'),
-	env: keystone.get('env'),
-	utils: keystone.utils,
-	editable: keystone.content.editable
+  _: require('underscore'),
+  env: keystone.get('env'),
+  utils: keystone.utils,
+  editable: keystone.content.editable
 });
 
 // Load your project's Routes
