@@ -9,24 +9,25 @@ exports = module.exports = function(req, res) {
   // item in the header navigation.
   locals.section = 'home';
   locals.data = {
-    articles: []
+    resources: []
   };
   locals.protocol = req.protocol;
 
-  // Load the Articles
+  // Load the Resources
   view.on('init', function(next) {
-    console.log("query articles")
+    console.log("query resources")
 
-    var Article = keystone.list('Article');
+    var Resource = keystone.list('Resource');
 
-    Article.model.find()
+    Resource.model.find()
       .limit(3)
       .where('state', 'published')
       // .populate('owner')
       .populate('subjects')
       .populate('contentTypes')
       .exec(function(err, results) {
-        locals.data.articles = results;
+        console.log(results);
+        locals.data.resources = results;
         next(err);
       });
 

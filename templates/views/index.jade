@@ -2,17 +2,17 @@ extends ../layouts/default
 
 block content
   .container
-    .articles
-      each article in data.articles
-        .article.row
+    .resources
+      each resource in data.resources
+        .resource.row
           .col-md-4
             .title 
-              a(href="#{protocol}:#{article.content.url}") #{article.title}
+              a(href="#{protocol}:#{resource.content.url}") #{resource.title}
           .col-md-3
-            div #{article.author}
+            div #{resource.author}
           .col-md-3
-            each subject in article.subjects
+            each subject in resource.subjects
               div #{subject.title}
           .col-md-2
-            each contentType in article.contentTypes
+            each contentType in resource.contentTypes
               div #{contentType.title}              

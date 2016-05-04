@@ -1,13 +1,13 @@
 var keystone = require('keystone'),
     Types = keystone.Field.Types;
 
-var Article = new keystone.List('Article', {
+var Resource = new keystone.List('Resource', {
     autokey: { path: 'slug', from: 'title', unique: true },
     map: { name: 'title' },
     defaultSort: '-createdAt'
 });
 
-Article.add({
+Resource.add({
     title: { type: String, required: true, initial: true },
     state: { type: Types.Select, options: 'published, archived', default: 'published' },
     owner: { type: Types.Relationship, ref: 'User' },
@@ -29,5 +29,5 @@ Article.add({
     }
 });
 
-Article.defaultColumns = 'title, state|15%, subjects, contentTypes, content'
-Article.register();
+Resource.defaultColumns = 'title, state|15%, subjects, contentTypes, content'
+Resource.register();
