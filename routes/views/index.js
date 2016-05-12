@@ -15,8 +15,7 @@ exports = module.exports = function(req, res) {
 
   // Load the Resources
   view.on('init', function(next) {
-    console.log("query resources")
-
+    
     var Resource = keystone.list('Resource');
 
     Resource.model.find()
